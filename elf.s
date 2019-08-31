@@ -1,10 +1,3 @@
-###################
-#Compilation Notes#
-###################
-
-#This source is for PyiiASMH (Raw ASM) compilation only#
-#This will NOT work on devkitPPC binutils#
-
 ###########
 #START ELF#
 ###########
