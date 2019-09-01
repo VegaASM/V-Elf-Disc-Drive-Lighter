@@ -55,7 +55,7 @@ ehdr:
     .long phdr_off #e_phoff #Address Offset to 1st Program Header
     .long 0x00000000 #e_shoff, Address Offset to 1st Section Header, leave Null since no Section Headers are used
     
-    .long 0x80000000 #e_flags, OS Specific Flags for the Elf Header, HBC requires this to be 0x80000000
+    .long 0x80000000 #e_flags, OS Specific Flags for the Elf Header, This flag is for PowerPC Embedded
 
     .short ehdrsize #e_ehsize, size in bytes of ELF Header
     .short phdrsize #e_phentsize, size in bytes of Program Header
@@ -85,8 +85,8 @@ phdr:
     .long filesize #p_filesz, Program Header needs the File Size
     .long filesize #p_memsz, Program Header needs the Memory Size, for this source it's the same as the File Size
 
-    .long 0x00000005 #p_flags, OS Specific Flags for the Program Header. HBC & PPC requires this to always be 5
-    .long 0x00010000 #p_align, Align the Program Header, not sure why I need this value, HBC requires it
+    .long 0x00000005 #p_flags, OS Specific Flags for the Program Header. 1 (Readable) + 4 (Executable) = 5
+    .long 0x00010000 #p_align, Align the Program Header, this indicates PowerPC -mrelocatable flag
 
     phdrsize = $ - phdr #This macro calculates the size of the Program Header in Bytes
 
