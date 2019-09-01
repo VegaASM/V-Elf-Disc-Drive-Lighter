@@ -1,5 +1,5 @@
 # V-Elf-Disc-Drive-Lighter
-A tiny PPC Elf (entirely handwritten from scratch) that will initiate the disc drive light on the Wii.
+A tiny PPC Elf file (entirely handwritten from scratch) that will initiate the disc drive light on the Wii.
 
 Version: 0.1
 
