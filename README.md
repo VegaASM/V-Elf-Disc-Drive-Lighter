@@ -11,7 +11,7 @@ V-Elf = Handwritten PPC Wii ELF file by VegaASM (Vega of MKWii.com)
 
 HOW TO COMPILE:
 
-1. Use PyiiASMH (RAW ASM option) to compile. Currently, the source will NOT compile on devkitPPC binutils.
+1. Use PyiiASMH (RAW ASM option) to compile elf.s. Currently, the source will NOT compile on devkitPPC binutils.
 
 2. Once compiled, make a binary file (named boot.elf) on a Hex Editor using the compiled byte code.
 
