@@ -62,7 +62,7 @@ ehdr:
 phdr:
 
     .long 0x00000001 #p_type aka p_load, The type of Program Loader. HBC requires this to always be 1
-    .long start_off #p_offset, Offset to next Program Header. Use 0 if there's only one Program Header
+    .long start_off #p_offset, Offset to next Program Header. Use entry point offset if only 1 Header is used.
     .long _start #phdr #p_vaddr #Virtual Address to start of Program Header
     .long _start #phdr #p_paddr #Physical Address to start of Program header
 
