@@ -48,7 +48,7 @@ ehdr:
 
     .long 0x00000001 #e_version, Elf Version 1 for Current. 0 = Invalid, 2+ = Version Num Increase. HBC requires this to always be 1
 
-    .long _start #e_entry, Entry Point Address, ALL PPC compilers will make the address start as 0x8XXXXXXX
+    .long _start #e_entry, Entry Point Address, ALL PPC compilers will add 0x80000000 to this value.
     
     #Elf Contents for Flags, Program Headers, and Section Headers#
 
@@ -79,8 +79,8 @@ phdr:
 
     .long 0x00000001 #p_type aka p_load, The type of Program Loader. HBC requires this to always be 1
     .long start_off #p_offset, Offset to next Program Header. Use entry point offset if only 1 Header is used.
-    .long _start #phdr #p_vaddr #Virtual Address to start of Program Header
-    .long _start #phdr #p_paddr #Physical Address to start of Program header
+    .long _start #phdr #p_vaddr #Virtual Address to start of Program Header, value 0x80000000 auto added by all PPC compilers
+    .long _start #phdr #p_paddr #Physical Address to start of Program header, value 0x80000000 auto added by all PPC compilers
 
     .long filesize #p_filesz, Program Header needs the File Size
     .long filesize #p_memsz, Program Header needs the Memory Size, for this source it's the same as the File Size
