@@ -79,8 +79,8 @@ phdr:
 
     .long 0x00000001 #p_type aka p_load, The type of Program Loader. HBC requires this to always be 1
     .long start_off #p_offset, Offset to next Program Header. Use offset from start of file to start of contents if only 1 Header is used.
-    .long 0x80004000 #phdr #p_vaddr #Virtual Address to start of Program Header, put Virtual entry point if only 1 Header is used
-    .long 0x80004000 #phdr #p_paddr #Physical Address to start of Program header, HBC wants this the same as Virtual. Put Virtual entry point if only 1 Header is used
+    .long 0x80004000 #p_vaddr #Virtual Address to start of Program Header, put Virtual entry point if only 1 Header is used
+    .long 0x80004000 #p_paddr #Physical Address to start of Program header, HBC wants this the same as Virtual. Put Virtual entry point if only 1 Header is used
 
     .long filesize #p_filesz, Program Header needs the File Size
     .long filesize #p_memsz, Program Header needs the Memory Size, for this source it's the same as the File Size
