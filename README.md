@@ -19,4 +19,4 @@ History:
 
 Aug 31, 2019 - Initial Release (v0.1)
 
-Feb 28, 2020 - Elf Size cut down to 0x64 bytes (v0.4)
+Feb 28, 2020 - Elf Size cut down to 0x64 bytes (v0.2)
