@@ -55,7 +55,7 @@ ehdr:
     .long phdr_off #e_phoff #Offset from start of file to 1st Program Header
     .long 0x00000000 #e_shoff, Address Offset to 1st Section Header, leave Null since no Section Headers are used
     
-    .long 0x00000000 #e_flags, OS Specific Flags for the Elf Header, PowerPC has no flags, leave NULL
+    .long 0x00000000 #e_flags, OS Specific Flags for the Elf Header, PowerPC embedded flag is supposedly 0x80000000 but it's not needed for HBC, leave NULL
 
     .short ehdrsize #e_ehsize, size in bytes of ELF Header
     .short phdrsize #e_phentsize, size in bytes of Program Header
