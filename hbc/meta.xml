@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <app version="1">
 	<name>V-Elf-Disc-Drive-Lighter</name>
-	<version>0.2</version>
-	<release_date>20200228</release_date>
+	<version>0.3</version>
+	<release_date>20210401</release_date>
 	<coder>Vega</coder>
 	<short_description>V-Elf</short_description>
 	<long_description>A tiny PPC Elf file (entirely handwritten from scratch) that will initiate the disc drive light on the Wii.</long_description>
