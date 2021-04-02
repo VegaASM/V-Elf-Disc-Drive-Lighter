@@ -17,6 +17,11 @@ HOW TO COMPILE:
 
 3. Drag boot.elf into /hbc folder. Place /hbc folder in the /apps folder of your SD/USB. Launch HBC. Select the V-Elf-Disc-Drive-Lighter app, launch it. To stop the app, you will need to reboot your Wii manually.
 
+NOTE: Alternate method to compile (using devkitPPC binutils on linux)
+- cd /whereyouinstalleddevkitinto/devkitpro/devkitPPC/bin
+- ./powerpc-eabi-as -mregnames -mbroadway /home/yourusername/V-Elf-Disc-Drive-Lighter-master/elf.s -o /home/yourusername/V-Elf-Disc-Drive-Lighter-master/elf.o
+- ./powerpc-eabi-objcopy -O binary /home/yourusername/V-Elf-Disc-Drive-Lighter-master/elf.o /home/yourusername/V-Elf-Disc-Drive-Lighter-master/boot.elf
+
 History:
 
 Apr 1, 2021 - Minor fix (had a virtual address listed for p_paddr, fixed it)
