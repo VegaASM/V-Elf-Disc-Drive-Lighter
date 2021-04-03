@@ -52,7 +52,7 @@ ehdr:
     
     #Elf Contents for Flags, Program Headers, and Section Headers#
 
-    .long phdr_off #e_phoff #Offset from start of file to 1st Program Header
+    .long phdr_off #e_phoff, Offset from start of ELF to 1st Program Header
     .long 0x00000000 #e_shoff, Address Offset to 1st Section Header, leave Null since no Section Headers are used
     
     .long 0x00000000 #e_flags, OS Specific Flags for the Elf Header, PowerPC embedded flag is supposedly 0x80000000 but it's not needed for HBC, leave NULL
@@ -64,7 +64,7 @@ ehdr:
     .short 0x0000 #e_shentsize, 1st Section Header size, Null since no Section Headers are used
     
     .short 0x0000 #e_shnum, Amount of Section Headers
-    .short 0x0000 #e_shstrndx # Address Offset to a specific Section Header within the Sectino Header Table
+    .short 0x0000 #e_shstrndx, Address Offset to a specific Section Header within the Sectino Header Table
 
     ehdrsize = $ - ehdr #This macro calculates the size of the Elf Header in Bytes
 
@@ -79,8 +79,8 @@ phdr:
 
     .long 0x00000001 #p_type aka p_load, The type of Program Loader. HBC requires this to always be 1
     .long start_off #p_offset, Offset to next Program Header. Use offset from start of file's ASM contents if only 1 Header is used.
-    .long 0x80004000 #p_vaddr #Virtual Address to start of Program Header, put Virtual entry point if only 1 Header is used
-    .long 0x00004000 #p_paddr #Physical Address to start of Program header, put Physical entry point if only 1 Header is used
+    .long 0x80004000 #p_vaddr, Virtual Address to start of Program Header, put Virtual entry point if only 1 Header is used
+    .long 0x00004000 #p_paddr, Physical Address to start of Program header, put Physical entry point if only 1 Header is used
 
     .long filesize #p_filesz, Program Header needs the File Size
     .long filesize #p_memsz, Program Header needs the Memory Size, for this source it's the same as the File Size
