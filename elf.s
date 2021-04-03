@@ -78,7 +78,7 @@ ehdr:
 phdr:
 
     .long 0x00000001 #p_type aka p_load, The type of Program Loader. HBC requires this to always be 1
-    .long start_off #p_offset, Offset to next Program Header. Use offset from start of file's ASM contents if only 1 Header is used.
+    .long start_off #p_offset, Offset to next Program Header. However since there's only 1 program header, this must be set to the offset from start of ELF to where beginning of the assembler contents are located at
     .long 0x80004000 #p_vaddr, Virtual Address to start of Program Header, put Virtual entry point if only 1 Header is used
     .long 0x00004000 #p_paddr, Physical Address to start of Program header, put Physical entry point if only 1 Header is used
 
