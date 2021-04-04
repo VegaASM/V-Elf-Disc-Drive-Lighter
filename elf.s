@@ -38,9 +38,12 @@ ehdr:
     .byte 0x00 #ei_osabi, OS or ABI specific Elf extensions. HBC doesn't care about this byte
     
     #Elf Padding#
-    
-    .space 8 #e_ident_pad, Required Padding of Two Words of Null
-    
+
+    #e_ident_pad not used/read by HBC, Let's place the start point here, we have room for two instructions
+_start:
+    lis r3, 0xCD80
+    b continue_code
+        
     #Elf Contents for Machine, Version, and Point of Entry#
 
     .short 0x0002 #e_type, Elf Type. 2 = Executable
@@ -94,11 +97,10 @@ phdr:
 # ASSEMBLER CONTENTS #
 #~~~~~~~~~~~~~~~~~~~~#
 
-_start:
-    lis r3, 0xCD80
+    continue_code:
     li r4, 0x0020
     stw r4, 0x00C0 (r3) #Let an exception occur, just need the disc drive to be lit
-    
+        
 #~~~~~~~~~~~#
 # FILE SIZE #
 #~~~~~~~~~~~#
