@@ -1,5 +1,5 @@
 # V-Elf-Disc-Drive-Lighter
-A tiny PPC Elf file (entirely handwritten from scratch) that will initiate the disc drive light on the Wii. The Elf file size is only 0x64 bytes!
+A tiny PPC Elf file (entirely handwritten from scratch) that will initiate the disc drive light on the Wii. The Elf file size is only 0x5C bytes!
 
 Requirements: HBC version 1.1.0 or later (elf will NOT run from Bootmii)
 
