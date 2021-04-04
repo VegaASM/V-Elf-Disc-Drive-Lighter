@@ -24,7 +24,7 @@ NOTE: Alternate method to compile (using devkitPPC binutils on linux)
 
 History:
 
-v0.4 - Apr 3, 2021 - Removed branch instruction that was used to make a loop. It's not needed, just let an exception occur, disc drive will still light up.
+v0.4 - Apr 4, 2021 - Removed backwards branch instruction that was used to make a loop. It's not needed, just let an exception occur, disc drive will still light up. Placed the start point at at e_identpad and used that space to set up r3 then branch down to the typical start point to execute the last 2 instructions (set GPIO address, store value to GPIO). Elf size now down to 0x5C bytes
 
 v0.3 - Apr 1, 2021 - Minor fix (had a virtual address listed for p_paddr, fixed it)
 
