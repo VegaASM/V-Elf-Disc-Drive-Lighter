@@ -3,7 +3,7 @@ A tiny PPC Elf file (entirely handwritten from scratch) that will initiate the d
 
 Requirements: HBC version 1.1.0 or later (elf will NOT run from Bootmii)
 
-Version: 0.3
+Version: 0.4
 
 Author: Vega
 
@@ -24,8 +24,11 @@ NOTE: Alternate method to compile (using devkitPPC binutils on linux)
 
 History:
 
-Apr 1, 2021 - Minor fix (had a virtual address listed for p_paddr, fixed it)
+v0.4 - Apr 3, 2021 - Removed branch instruction to make a loop. It's not needed, just let an exception occur, disc drive will still light up.
 
-Aug 31, 2019 - Initial Release (v0.1)
+v0.3 - Apr 1, 2021 - Minor fix (had a virtual address listed for p_paddr, fixed it)
 
-Feb 28, 2020 - Elf Size cut down to 0x64 bytes (v0.2)
+v0.2 - Feb 28, 2020 - Elf Size cut down to 0x64 bytes
+
+v0.1 - Aug 31, 2019 - Initial Release
+
