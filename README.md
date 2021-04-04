@@ -24,7 +24,7 @@ NOTE: Alternate method to compile (using devkitPPC binutils on linux)
 
 History:
 
-v0.4 - Apr 3, 2021 - Removed branch instruction to make a loop. It's not needed, just let an exception occur, disc drive will still light up.
+v0.4 - Apr 3, 2021 - Removed branch instruction that was used to make a loop. It's not needed, just let an exception occur, disc drive will still light up.
 
 v0.3 - Apr 1, 2021 - Minor fix (had a virtual address listed for p_paddr, fixed it)
 
