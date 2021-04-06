@@ -88,7 +88,7 @@ phdr:
     .long filesize #p_filesz, Program Header needs the File Size
     .long filesize #p_memsz, Program Header needs the Memory Size
 
-    .long 0x00000005 #p_flags, OS Specific Flags for the Program Header. 1 (Readable) + 4 (Executable) = 5
+    .long 0x00000005 #p_flags, OS Specific Flags for the Program Header. 1 (Readable) OR'd 4 (Executable) = 5. Do NOT set the Writeable flag (2) or else the program header will be used as a text section instead of a data section
     .long 0x00000000 #p_align, Align the Program Header. No alignment needed for this source
 
     phdrsize = $ - phdr #This macro calculates the size of the Program Header in Bytes
