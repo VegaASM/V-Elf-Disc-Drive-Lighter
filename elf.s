@@ -81,7 +81,7 @@ _start:
 phdr:
 
     .long 0x00000001 #p_type aka p_load, The type of Program Loader. When this is set to 1, HBC then knows this is the program header that will have the p_offset value that points to entry point of assembly execution
-    .long start_off #p_offset, Offset to next Program Header. However since there's this the program header with p_load value of 1, this must be set to the offset from start of ELF to where beginning of the assembler contents are located at
+    .long start_off #p_offset, Offset to next Program Header. However since this is the program header with the p_load value of 1, this must be set to the offset from start of ELF to where beginning of the assembler contents are located at
     .long 0x80004000 #p_vaddr, Virtual Address to start of Program Header, put Virtual entry point if only 1 Header is used
     .long 0x00004000 #p_paddr, Physical Address to start of Program header, put Physical entry point if only 1 Header is used
 
